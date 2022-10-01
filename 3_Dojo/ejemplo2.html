@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="//ajax.googleapis.com/ajax/libs/dojo/1.14.1/dojo/dojo.js" data-dojo-config="async: true"></script>
+    <title>Efectos visuales (Animaciones)</title>
+    <link rel="stylesheet" href="/estilos/estilos.css">
+
+    <style>
+        h1{
+            font-family: Arial, Helvetica, sans-serif;
+            color: darkcyan;
+        }
+    </style>
+
+    <script type="text/javascript">
+        require([
+            "dojo/dom",
+            "dojo/fx",
+            "dojo/domReady!"
+        ],function(dom,fx){
+            var saludo = dom.byId("saludo");
+            saludo.innerHTML += " desde Dojo!";
+
+            fx.slideTo({
+                node: saludo,
+                top: window.innerHeight/2.5,
+                left: window.innerWidth/2.5,
+            }).play();
+        });
+    </script>
+
+</head>
+<header>
+    <button onclick="mainMenu()">Inicio</button>
+    <script>
+        function mainMenu(){
+            window.location.href = "/index.html";
+        }
+    </script>
+</header>
+<body>
+
+    <h1 id="saludo">Hola</h1>
+    
+</body>
+</html>

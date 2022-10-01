@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script type="text/javascript" src="jquery-3.6.1.min.js"></script>
+    <!--<script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/3.6.1/jquery.min.js"></script>-->
+    <script type="text/javascript"
+        src="http://ajax.aspnetcdn.com/ajax/jquery.validate/1.17.0/jquery.validate.min.js"></script>
+    <script type="text/javascript" src="ejemplo2.js"></script>
+    <link rel="stylesheet" href="/estilos/estilos.css">
+    <title>Document</title>
+</head>
+<header>
+    <button onclick="mainMenu()">Inicio</button>
+    <script>
+        function mainMenu(){
+            window.location.href = "/index.html";
+        }
+    </script>
+</header>
+<body>
+    <form id="formulario" action="" method="post">
+        <p id="p1"></p>
+        <p>
+            <label for="nombre">Nombre <span>(Ingrese al menos 3 caracteres)</span></label>
+            <input type="text" id="nombre" name="nombre">
+        </p>
+        <p>
+            <label for="edad">Edad <span>(Minimo 18)</span></label>
+            <input type="text" id="edad" name="edad">
+        </p>
+        <p>
+            <label for="email">E-mail </label>
+            <input type="text" id="email" name="email">
+        </p>
+        <p id="boton_contenedor">
+            <input class="enviar" type="submit" value="ENVIAR">
+        </p>
+    </form>
+</body>
+
+</html>

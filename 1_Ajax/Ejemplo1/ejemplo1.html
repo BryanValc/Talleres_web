@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Introduccion</title>
+    <link rel="stylesheet" href="/estilos/estilos.css">
+</head>
+<header>
+    <button onclick="mainMenu()">Inicio</button>
+    <script>
+        function mainMenu(){
+            window.location.href = "/index.html";
+        }
+    </script>
+</header>
+<body>
+
+    <button onclick="ejecutarAjax()">Hazme click</button>
+    <div id="info"></div>
+
+    <script type="text/javascript">
+
+        function ejecutarAjax(){
+
+            var ajaxRequest = new XMLHttpRequest();
+
+            ajaxRequest.onreadystatechange = function(){
+
+                if(ajaxRequest.readyState == 4 && ajaxRequest.status == 200){
+
+                    document.getElementById("info").innerHTML = ajaxRequest.responseText;
+                    
+                }
+            }
+
+            ajaxRequest.open("GET", "documento.txt", true);
+            ajaxRequest.send();
+
+        }
+
+    </script>
+
+</body>
+</html>

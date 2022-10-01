@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="//ajax.googleapis.com/ajax/libs/dojo/1.14.1/dojo/dojo.js" data-dojo-config="async: true"></script>
+    <title>Hola mundo básico</title>
+    <link rel="stylesheet" href="/estilos/estilos.css">
+
+</head>
+<header>
+    <button onclick="mainMenu()">Inicio</button>
+    <script>
+        function mainMenu(){
+            window.location.href = "/index.html";
+        }
+    </script>
+</header>
+<body>
+
+    <div id="container">
+
+    </div>
+    
+    <script>
+        require(["dojo/dom", "dojo/dom-construct"], function(dom, domConstruct){
+            let container = dom.byId("container");
+            container.innerHTML = "Dojo te dice hola mundo!";
+
+            domConstruct.create("h1", {innerHTML: "Hola mundo!"}, container, "before");
+        });
+    </script>
+
+</body>
+</html>
