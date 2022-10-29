@@ -1,0 +1,18 @@
+#row {
+  background: #bcece1 !important;
+}
+body {
+  background: linear-gradient(to right, #88fbff, #b25af1);
+}
+.container {
+  background: linear-gradient(to right, #e5e562, #c340a6);
+}
+form {
+  background: #f1f1f13e;
+}
+.formulario {
+  background: #f1f1f13e;
+}
+.bg {
+  background-image: url(../assets);
+}

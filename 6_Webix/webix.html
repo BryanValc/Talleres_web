@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Webix</title>
+    <link rel="stylesheet" href="https://cdn.webix.com/edge/webix.css" type="text/css">
+    <script src="https://cdn.webix.com/edge/webix.js" type="text/javascript"></script>
+</head>
+<body>
+    <script type="text/javascript">
+        var meses=[
+            {ventas: "1",mes: "Enero"},
+            {ventas: "2",mes: "Febrero"},
+            {ventas: "3",mes: "Marzo"},
+            {ventas: "4",mes: "Abril"},
+            {ventas: "5",mes: "Mayo"},
+            {ventas: "6",mes: "Junio"},
+            {ventas: "7",mes: "Julio"},
+            {ventas: "8",mes: "Agosto"},
+            {ventas: "9",mes: "Septiembre"},
+            {ventas: "10",mes: "Octubre"},
+            {ventas: "11",mes: "Noviembre"},
+            {ventas: "12",mes: "Diciembre"},
+            {ventas: "13",mes: "Enero"},
+            {ventas: "14",mes: "Febrero"},
+            {ventas: "15",mes: "Marzo"},
+            {ventas: "16",mes: "Abril"},
+            {ventas: "17",mes: "Mayo"},
+            {ventas: "18",mes: "Junio"},
+            {ventas: "19",mes: "Julio"},
+            {ventas: "20",mes: "Agosto"},
+            {ventas: "21",mes: "Septiembre"},
+            {ventas: "22",mes: "Octubre"},
+            {ventas: "23",mes: "Noviembre"},
+            {ventas: "24",mes: "Diciembre"},
+            {ventas: "25",mes: "Enero"},
+            {ventas: "26",mes: "Febrero"},
+            {ventas: "27",mes: "Marzo"},
+            {ventas: "28",mes: "Abril"},
+            {ventas: "29",mes: "Mayo"},
+            {ventas: "30",mes: "Junio"},
+            {ventas: "31",mes: "Julio"},
+            {ventas: "32",mes: "Agosto"},
+            {ventas: "33",mes: "Septiembre"},
+            {ventas: "34",mes: "Octubre"},
+            {ventas: "35",mes: "Noviembre"},
+            {ventas: "36",mes: "Diciembre"},
+            {ventas: "37",mes: "Enero"},
+            {ventas: "38",mes: "Febrero"},
+            {ventas: "39",mes: "Marzo"},
+            {ventas: "40",mes: "Abril"},
+            {ventas: "41",mes: "Mayo"},
+            {ventas: "42",mes: "Junio"},
+            {ventas: "43",mes: "Julio"},
+            {ventas: "44",mes: "Agosto"},
+            {ventas: "45",mes: "Septiembre"},
+            {ventas: "46",mes: "Octubre"},
+            {ventas: "47",mes: "Noviembre"},
+            {ventas: "48",mes: "Diciembre"},
+            {ventas: "49",mes: "Enero"},
+            {ventas: "50",mes: "Febrero"},
+            {ventas: "51",mes: "Marzo"},
+            {ventas: "52",mes: "Abril"},
+            {ventas: "53",mes: "Mayo"},
+            {ventas: "54",mes: "Junio"},
+            {ventas: "55",mes: "Julio"},
+            {ventas: "56",mes: "Agosto"},
+            {ventas: "57",mes: "Septiembre"},
+            {ventas: "58",mes: "Octubre"},
+            {ventas: "59",mes: "Noviembre"},
+            {ventas: "60",mes: "Diciembre"}
+        ]
+
+        webix.ui({
+            rows:[
+                {
+                    cols:[
+                        {
+                            view:"chart",
+                            type:"bar",
+                            value:"#ventas#",
+                            label:"#ventas#",
+                            xAxis:{
+                                template:"#mes#"
+                            },
+                            yAxis:{
+                                start:0,
+                                end:60,
+                                step:5
+                            },
+                            data:meses
+                        },
+                        {
+                            view:"chart",
+                            type:"pie",
+                            value:"#ventas#",
+                            label:"#ventas#",
+                            data:meses
+                        }
+                    ]
+                },
+                {
+                    view: "button", width: 230, value: "Exportar a PDF como tabla", click: function () {
+                        webix.toPDF("chart", { autowidth: true });
+                    }
+                },
+                {
+                    view: "button", width: 230, value: "Exportar a PDF como imagen", click: function () {
+                        webix.toPDF("chart", { display: "image" });
+                    }
+                },
+                {
+                    view: "button", width: 320, value: "Exportar a PDF chart como imagen y tabla", click: function () {
+                        webix.toPDF("chart", { display: "all", autowidth: true });
+                    }
+                }
+            ]
+        });
+
+    </script>
+</body>
+</html>
